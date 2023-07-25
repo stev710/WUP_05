@@ -74,11 +74,23 @@ colPerc(table1)
 ```
 
 This graph is showing that among all those who were infected with aids, 24% of them had the drug and 75% had the placebo. 3/4 of the people who received the placebo were more likely to get aids than those who recieved the drug.
+
+
 ## Inferential Results
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+For the fisher exact test shows if you get the vaccine you are 0.35 times likey to get aids.
+The chisq test has a p-value 0.0000001242 and I reject the null hypothesis because it is so small proving there is relationship between getting the vaccine and not receieving aids
+.
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+Rejecting the null hypothesis because the drug is more effective in preventing aids than the placebo.
