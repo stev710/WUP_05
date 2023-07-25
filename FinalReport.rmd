@@ -73,6 +73,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+This graph is showing that among all those who were infected with aids, 24% of them had the drug and 75% had the placebo. 3/4 of the people who received the placebo were more likely to get aids than those who recieved the drug.
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
