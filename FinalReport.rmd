@@ -25,7 +25,7 @@ $H_0$: The vaccine (drug) is not effective in preventing aids amoung drug users.
 $H_A$ The vaccine (drug) is effective in preventing aids amoung drug users.
 
 
-Data for this study came from a clinical trial for the d rug triumpscal.
+Data for this study came from a clinical trial for the drug triumpscal.
 
 
 # Methods
