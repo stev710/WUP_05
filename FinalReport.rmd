@@ -8,7 +8,7 @@ editor_options:
 ---
 
 ```{r include=FALSE,echo=FALSE}
-require(tidyverse)
+require(dplyr)
 require(tigerstats)
 triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
 ```
@@ -32,9 +32,20 @@ Data for this study came from a clinical trial for the drug triumpscal.
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
+Because the question is about drug user; we have to subset the data to 
+include only druggies.
+
+The graphical display will be bar plot. the numerical display will be 
+a cross table, and the inferential display will be a chisq test.
+
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+```{r}
+DruggieData = filter(triUmp , DrugUser == "yes")
+```
+
 
 ## Descriptive Results
 
@@ -42,9 +53,25 @@ Data for this study came from a clinical trial for the drug triumpscal.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+```{r}
+barchartGC(~infected + treatment,data=DruggieData)
+barchartGC(~infected + treatment,data=DruggieData, type="percent")
+
+```
+
+Among those who did not get aids, half got the drug and half got the placebo, there is not much of a difference. However, among those who did get aids, there was more of a difference between the people who got the placebo adn the people who got the drug. The people who got the placebo were more likely to get aids. Concluding that the drug is effective among people with aids than those who received the placebo.
+
+
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+table1 <- xtabs(~infected+treatment, data=DruggieData)
+rowPerc(table1)
+colPerc(table1)
+```
 
 ## Inferential Results
 
